@@ -74,6 +74,7 @@ int main()
 {
 	int32_t ammo = 9999;
 	int32_t health = 9999;
+	int32_t timer = 0;
 
 
 	HWND ac = FindWindowA(NULL, "AssaultCube");
@@ -122,6 +123,18 @@ int main()
 
 				}
 				if (GetAsyncKeyState(VK_NUMPAD3))
+				{
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x180), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x178), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x174), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x170), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x16C), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x168), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x164), &timer, sizeof(timer), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x160), &timer, sizeof(timer), 0);
+
+				}
+				if (GetAsyncKeyState(VK_NUMPAD4))
 				{
 					flying = !flying;
 					if (flying)
