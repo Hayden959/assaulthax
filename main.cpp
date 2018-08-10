@@ -114,7 +114,10 @@ int main()
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x150), &ammo, sizeof(ammo), 0);
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x13c), &ammo, sizeof(ammo), 0);
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x158), &ammo, sizeof(ammo), 0);
-					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x150), &ammo, sizeof(ammo), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x14C), &ammo, sizeof(ammo), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x148), &ammo, sizeof(ammo), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x144), &ammo, sizeof(ammo), 0);
+					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x140), &ammo, sizeof(ammo), 0);
 				}
 				if (GetAsyncKeyState(VK_NUMPAD2)) 
 				{
@@ -161,3 +164,51 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+/*
+Here are the addresses for availability incase you want to add on to this source for yourself.
+
+Client Address: 0x400000
+Player Base: "ac_client.exe"+0x109B74/509B74
+
+Player Position XY: 0x4
+Player Position XY: 0x8
+Player Position Z: 0xC
+Player Yaw: 0x40
+Player Pitch: 0x44
+Player Roll: 0x48
+Player Health: 0xF8
+Player Armor: 0xFC
+Player Pistol: 0x114
+Player Carbine: 0x118
+Player Shotgun: 0x11C
+Player MachineGun: 0x120
+Player Sniper: 0x124 
+Player A-Rifle: 0x128
+Player Pistol Clip: 0x13C
+Player Carbine Clip: 0x140
+Player Shotgun Clip 0x144
+Player MachineGun Clip: 0x148
+Player Sniper Clip: 0x14C
+Player A-Rifle Clip: 0x150
+Player Grenade Ammo: 0x158
+Time Between Knifes: 0x160
+Pistol Timer: 0x164
+Carbine Timer: 0x168
+Shotgun Timer: 0x16C
+Machine Gun Timer: 0x170
+Sniper Timer: 0x174
+A-Rifle Timer: 0x178
+Grenade Timer(?): 0x180
+TeamNum1: 0x204
+Mouse Button Down(?): 0x224
+TeamNum2: 0x32C
+
+Entity Base: "ac_client.exe"+0x110D90/510D90
+EntityBase Offsets: 0x0
+0x0+(4 bytes each player, starts at 0)*/
