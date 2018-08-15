@@ -119,7 +119,7 @@ int main()
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x144), &ammo, sizeof(ammo), 0);
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0x140), &ammo, sizeof(ammo), 0);
 				}
-				if (GetAsyncKeyState(VK_NUMPAD2)) 
+				if (GetAsyncKeyState(VK_NUMPAD2))
 				{
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0xF8), &health, sizeof(health), 0);
 					WriteProcessMemory(achandle, (LPVOID*)(LocalPlayer + 0xFC), &health, sizeof(health), 0);
@@ -160,7 +160,6 @@ int main()
 		}
 
 	}
-
 
 	return 0;
 }
