@@ -106,7 +106,6 @@ int main()
 			ReadProcessMemory(achandle, (PBYTE*)(Base + 0x109B74), &LocalPlayer, sizeof(LocalPlayer), 0);
 			printf("[+] LocalPlayer Address: 0x%" PRIx32 "\n", LocalPlayer);
 			bool flying = false;
-			DWORD old_protect;
 			for (;;)
 			{
 				if (GetAsyncKeyState(VK_NUMPAD1))
