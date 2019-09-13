@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int GetProcessID(const wchar_t* ExeName)
+int GetProcessID(const char* ExeName)
 {
 	PROCESSENTRY32 ProcEntry = { 0 };
 	HANDLE SnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
@@ -21,7 +21,7 @@ int GetProcessID(const wchar_t* ExeName)
 
 	do
 	{
-		if (!wcscmp(ProcEntry.szExeFile, ExeName))
+		if (!strcmp(ProcEntry.szExeFile, ExeName))
 		{
 			CloseHandle(SnapShot);
 			return ProcEntry.th32ProcessID;
@@ -36,7 +36,7 @@ DWORD_PTR GetProcessBaseAddress(int processID)
 {
 	DWORD_PTR   baseAddress = 0;
 	HANDLE      processHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, processID);
-	HMODULE     *moduleArray;
+	HMODULE* moduleArray;
 	LPBYTE      moduleArrayBytes;
 	DWORD       bytesRequired;
 
@@ -53,7 +53,7 @@ DWORD_PTR GetProcessBaseAddress(int processID)
 					unsigned int moduleCount;
 
 					moduleCount = bytesRequired / sizeof(HMODULE);
-					moduleArray = (HMODULE *)moduleArrayBytes;
+					moduleArray = (HMODULE*)moduleArrayBytes;
 
 					if (EnumProcessModules(processHandle, moduleArray, bytesRequired, &bytesRequired))
 					{
@@ -88,7 +88,7 @@ int main()
 	{
 		DWORD procID;
 		GetWindowThreadProcessId(ac, &procID);
-		int pid = GetProcessID(L"ac_client.exe");
+		int pid = GetProcessID("ac_client.exe");
 		HANDLE achandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
 
 		if (procID = NULL)
