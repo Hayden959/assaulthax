@@ -1,6 +1,5 @@
 # assaulthax
-a simple assault cube cheat I am making for learning purposes
-
+a simple and badly made assault cube cheat
 
 I am making this to learn c++ game hacking using WriteProcessMemory, the cheat has the following
 
