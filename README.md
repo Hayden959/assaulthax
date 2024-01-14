@@ -1,7 +1,7 @@
 # assaulthax
 a simple and badly made assault cube cheat
 
-I am making this to learn c++ game hacking using WriteProcessMemory, the cheat has the following
+this was made to use accomplish very basic game hacking using WriteProcessMemory, the cheat has the following
 
 ammo hacks - sets ammo and grenades to 9999 (numpad 1)
 health hacks - sets health and armor to 9999 (numpad 2)
