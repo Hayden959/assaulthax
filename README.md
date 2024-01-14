@@ -1,5 +1,5 @@
 # assaulthax
-a simple and badly made assault cube cheat
+assault cube cheat
 
 this was made to use accomplish very basic game hacking using WriteProcessMemory, the cheat has the following
 
